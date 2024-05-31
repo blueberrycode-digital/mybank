@@ -14,10 +14,15 @@
 		0325E53C2C0914ED0043463A /* MyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E53B2C0914ED0043463A /* MyBankTests.swift */; };
 		0325E5462C0914ED0043463A /* MyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E5452C0914ED0043463A /* MyBankUITests.swift */; };
 		0325E5482C0914ED0043463A /* MyBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E5472C0914ED0043463A /* MyBankUITestsLaunchTests.swift */; };
+		033195E12C0A08740064799B /* MyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033195E02C0A08740064799B /* MyFoundation.framework */; };
+		033195E22C0A08740064799B /* MyFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 033195E02C0A08740064799B /* MyFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		033886662C0916D000F1B526 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886652C0916D000F1B526 /* HomeView.swift */; };
 		033886682C09220900F1B526 /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886672C0916F000F1B526 /* TransferView.swift */; };
 		0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */; };
 		0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */; };
+		033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886722C09806B00F1B526 /* TransferSectionView.swift */; };
+		033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886762C09827700F1B526 /* PrimaryButtonView.swift */; };
+		0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338867B2C0984DA00F1B526 /* BankAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		033195E32C0A08740064799B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				033195E22C0A08740064799B /* MyFoundation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0325E5272C0914EC0043463A /* MyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0325E52A2C0914EC0043463A /* MyBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankApp.swift; sourceTree = "<group>"; };
@@ -48,10 +67,14 @@
 		0325E5412C0914ED0043463A /* MyBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0325E5452C0914ED0043463A /* MyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankUITests.swift; sourceTree = "<group>"; };
 		0325E5472C0914ED0043463A /* MyBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		033195E02C0A08740064799B /* MyFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MyFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		033886652C0916D000F1B526 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		033886672C0916F000F1B526 /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
 		0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferView.swift; sourceTree = "<group>"; };
 		0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferViewModel.swift; sourceTree = "<group>"; };
+		033886722C09806B00F1B526 /* TransferSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSectionView.swift; sourceTree = "<group>"; };
+		033886762C09827700F1B526 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
+		0338867B2C0984DA00F1B526 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033195E12C0A08740064799B /* MyFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +110,7 @@
 				0325E53A2C0914ED0043463A /* MyBankTests */,
 				0325E5442C0914ED0043463A /* MyBankUITests */,
 				0325E5282C0914EC0043463A /* Products */,
+				033195DF2C0A08740064799B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +127,8 @@
 		0325E5292C0914EC0043463A /* MyBank */ = {
 			isa = PBXGroup;
 			children = (
+				0338867A2C0984D000F1B526 /* Models */,
+				033886742C09826300F1B526 /* Common */,
 				0338866E2C09606700F1B526 /* Networking */,
 				033886622C0916AD00F1B526 /* Pages */,
 				033886612C0916A500F1B526 /* App */,
@@ -135,6 +162,14 @@
 				0325E5472C0914ED0043463A /* MyBankUITestsLaunchTests.swift */,
 			);
 			path = MyBankUITests;
+			sourceTree = "<group>";
+		};
+		033195DF2C0A08740064799B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				033195E02C0A08740064799B /* MyFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		033886612C0916A500F1B526 /* App */ = {
@@ -175,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */,
+				033886722C09806B00F1B526 /* TransferSectionView.swift */,
 				0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */,
 			);
 			path = UserAccountTransfer;
@@ -187,6 +223,30 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		033886742C09826300F1B526 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				033886752C09826B00F1B526 /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		033886752C09826B00F1B526 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				033886762C09827700F1B526 /* PrimaryButtonView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0338867A2C0984D000F1B526 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0338867B2C0984DA00F1B526 /* BankAccount.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,6 +257,7 @@
 				0325E5232C0914EC0043463A /* Sources */,
 				0325E5242C0914EC0043463A /* Frameworks */,
 				0325E5252C0914EC0043463A /* Resources */,
+				033195E32C0A08740064799B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,9 +379,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				033886662C0916D000F1B526 /* HomeView.swift in Sources */,
+				033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */,
 				033886682C09220900F1B526 /* TransferView.swift in Sources */,
 				0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */,
+				0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */,
 				0325E52D2C0914EC0043463A /* ContentView.swift in Sources */,
+				033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */,
 				0325E52B2C0914EC0043463A /* MyBankApp.swift in Sources */,
 				0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */,
 			);

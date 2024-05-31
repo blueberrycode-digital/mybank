@@ -11,6 +11,10 @@ import MyFoundation
 @MainActor
 final class UserAccountTransferViewModel: ObservableObject {
     
+    private struct Constants {
+        static let sendSuccessText = "If this were a real app, the money would have been transfered between accounts."
+    }
+    
     @Published
     private(set) var accounts = [BankAccount]()
     
@@ -19,6 +23,9 @@ final class UserAccountTransferViewModel: ObservableObject {
     
     @Published
     private(set) var toAccount: BankAccount?
+    
+    @Published
+    var alertMessage: AlertMessage = .none
     
     // MARK: - Internal
     
@@ -39,17 +46,10 @@ final class UserAccountTransferViewModel: ObservableObject {
         fromAccount = toAccountPreviousValue
     }
     
-}
-
-struct BankAccount: Hashable {
-    let id: Int
-    let amount: Double
-    let currency: Currency
-    let name: String
-}
-
-struct Currency: Hashable {
-    let id: Int
-    let name: String
-    let symbol: String
+    func send() async {
+        // check faceid
+        alertMessage = .info(Constants.sendSuccessText)
+        // pop to route
+    }
+    
 }

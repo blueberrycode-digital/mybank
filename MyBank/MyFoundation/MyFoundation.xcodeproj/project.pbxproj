@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		033886712C0962FC00F1B526 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886702C0962FC00F1B526 /* Array+Extension.swift */; };
+		033886792C09842800F1B526 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886782C09842800F1B526 /* AlertMessage.swift */; };
 		03CAB7612C0915A8004629EC /* MyFoundation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 03CAB7602C0915A8004629EC /* MyFoundation.docc */; };
 		03CAB7672C0915A8004629EC /* MyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CAB75C2C0915A8004629EC /* MyFoundation.framework */; };
 		03CAB76C2C0915A8004629EC /* MyFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAB76B2C0915A8004629EC /* MyFoundationTests.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		033886702C0962FC00F1B526 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		033886782C09842800F1B526 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		03CAB75C2C0915A8004629EC /* MyFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CAB75F2C0915A8004629EC /* MyFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFoundation.h; sourceTree = "<group>"; };
 		03CAB7602C0915A8004629EC /* MyFoundation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MyFoundation.docc; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				0338866F2C0962EB00F1B526 /* Extensions */,
 				03CAB75F2C0915A8004629EC /* MyFoundation.h */,
 				03CAB7602C0915A8004629EC /* MyFoundation.docc */,
+				033886782C09842800F1B526 /* AlertMessage.swift */,
 			);
 			path = MyFoundation;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CAB7612C0915A8004629EC /* MyFoundation.docc in Sources */,
+				033886792C09842800F1B526 /* AlertMessage.swift in Sources */,
 				033886712C0962FC00F1B526 /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

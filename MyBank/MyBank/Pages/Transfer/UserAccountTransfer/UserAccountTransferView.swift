@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MyFoundation
 import SwiftUI
 
 struct UserAccountTransferView: View {
@@ -15,24 +16,38 @@ struct UserAccountTransferView: View {
     
     var body: some View {
         VStack(spacing: 50) {
-            Mmmm(sectionTitle: "From", account: viewModel.fromAccount)
+            TransferSectionView(sectionTitle: "From", account: viewModel.fromAccount)
             swapButton
-            Mmmm(sectionTitle: "To", account: viewModel.toAccount)
+            TransferSectionView(sectionTitle: "To", account: viewModel.toAccount)
+            amountView
             Spacer()
+            sendButton
         }.task { // load only once???
             await viewModel.load()
-        }
+        }.padding(15)
+            .customAlert($viewModel.alertMessage)
     }
     
     private var swapButton: some View {
         Button(action: {
             viewModel.swap()
         }, label: {
-            Image(systemName: "rectangle.2.swap")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 35)
+            SwapButtonView()
         })
+    }
+    
+    private var sendButton: some View {
+        Button(action: {
+            Task {
+                await viewModel.send()
+            }
+        }, label: {
+            PrimaryButtonView(title: "Send")
+        })
+    }
+    
+    private var amountView: some View {
+        
     }
     
     init() {
@@ -41,24 +56,13 @@ struct UserAccountTransferView: View {
     
 }
 
-struct Mmmm: View {
-    
-    let sectionTitle: String
-    let account: BankAccount?
+private struct SwapButtonView: View {
     
     var body: some View {
-        VStack {
-            Text(sectionTitle)
-                .font(.body)
-                .foregroundStyle(.black)
-            if let account {
-                HStack {
-                    Text(account.name)
-                    Spacer()
-                    Text("\(String(format: "%.2f", account.amount)) \(account.currency.symbol)")
-                }
-            }
-        }
+        Image(systemName: "rectangle.2.swap")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 35)
     }
     
 }
