@@ -14,19 +14,7 @@ struct UserAccountTransferView: View {
     @ObservedObject
     private var viewModel: UserAccountTransferViewModel
     
-    var body: some View {
-        VStack(spacing: 50) {
-            TransferSectionView(sectionTitle: "From", account: viewModel.fromAccount)
-            swapButton
-            TransferSectionView(sectionTitle: "To", account: viewModel.toAccount)
-            amountView
-            Spacer()
-            sendButton
-        }.task { // load only once???
-            await viewModel.load()
-        }.padding(15)
-            .customAlert($viewModel.alertMessage)
-    }
+    // MARK: - Private views
     
     private var swapButton: some View {
         Button(action: {
@@ -46,8 +34,50 @@ struct UserAccountTransferView: View {
         })
     }
     
+    private var amountSection: some View {
+        VStack(spacing: 12) {
+            TransferSectionHeaderView(title: "Amount")
+            amountView
+        }
+    }
+    
     private var amountView: some View {
-        
+        HStack {
+            amountTextView
+            currencySelector
+        }
+    }
+    
+    @ViewBuilder
+    private var amountTextView: some View {
+        TextField("",
+                  value: $viewModel.amount,
+                  format: .number
+        ).textFieldStyle(.plain)
+    }
+    
+    private var currencySelector: some View {
+        Picker("", selection: $viewModel.selectedCurrency) {
+            Text("---").tag(Int?(nil))
+            ForEach(viewModel.currencies, id: \.self) {
+                Text($0.symbol).tag(Optional($0))
+            }
+        }
+        .pickerStyle(.menu)
+    }
+    
+    var body: some View {
+        VStack(spacing: 50) {
+            TransferSectionView(sectionTitle: "From", account: viewModel.fromAccount)
+            swapButton
+            TransferSectionView(sectionTitle: "To", account: viewModel.toAccount)
+            amountSection
+            Spacer()
+            sendButton
+        }.task { // load only once???
+            await viewModel.load()
+        }.padding(15)
+            .customAlert($viewModel.alertMessage)
     }
     
     init() {

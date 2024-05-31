@@ -13,20 +13,30 @@ struct TransferSectionView: View {
     let sectionTitle: String
     let account: BankAccount?
     
-    private var titleView: some View {
-        Text(sectionTitle)
+    // MARK: Private
+    
+    private func accountNameView(account: BankAccount) -> some View {
+        Text(account.name)
             .font(.body)
             .foregroundStyle(.black)
     }
     
+    private func amountView(account: BankAccount) -> some View {
+        Text("\(String(format: "%.2f", account.amount)) \(account.currency.symbol)")
+            .font(.body)
+            .foregroundStyle(.black)
+    }
+    
+    // MARK: - Views
+    
     var body: some View {
         VStack {
-            titleView
+            TransferSectionHeaderView(title: sectionTitle)
             if let account {
                 HStack {
-                    Text(account.name)
+                    accountNameView(account: account)
                     Spacer()
-                    Text("\(String(format: "%.2f", account.amount)) \(account.currency.symbol)")
+                    amountView(account: account)
                 }
             }
         }

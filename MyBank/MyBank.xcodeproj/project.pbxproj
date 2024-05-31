@@ -23,6 +23,7 @@
 		033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886722C09806B00F1B526 /* TransferSectionView.swift */; };
 		033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886762C09827700F1B526 /* PrimaryButtonView.swift */; };
 		0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338867B2C0984DA00F1B526 /* BankAccount.swift */; };
+		033CFB422C0A44BC008C4B66 /* TransferSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		033886722C09806B00F1B526 /* TransferSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSectionView.swift; sourceTree = "<group>"; };
 		033886762C09827700F1B526 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		0338867B2C0984DA00F1B526 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			children = (
 				0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */,
 				033886722C09806B00F1B526 /* TransferSectionView.swift */,
+				033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */,
 				0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */,
 			);
 			path = UserAccountTransfer;
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033CFB422C0A44BC008C4B66 /* TransferSectionHeaderView.swift in Sources */,
 				033886662C0916D000F1B526 /* HomeView.swift in Sources */,
 				033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */,
 				033886682C09220900F1B526 /* TransferView.swift in Sources */,

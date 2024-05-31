@@ -19,6 +19,9 @@ final class UserAccountTransferViewModel: ObservableObject {
     private(set) var accounts = [BankAccount]()
     
     @Published
+    private(set) var currencies = [Currency]()
+    
+    @Published
     private(set) var fromAccount: BankAccount?
     
     @Published
@@ -27,9 +30,38 @@ final class UserAccountTransferViewModel: ObservableObject {
     @Published
     var alertMessage: AlertMessage = .none
     
+    @Published
+    var amount = 0.0
+    
+    @Published
+    var selectedCurrency: Currency?// = Currency(id: 1, name: "EUR", symbol: "EUR") //!!!!!!!!!
+    
     // MARK: - Internal
     
     func load() async {
+        async let accounts: () = loadAccounts()
+        async let currencies: () = loadCurrencies()
+        
+        _ = await (accounts, currencies)
+    }
+    
+    func swap() {
+        let toAccountPreviousValue = toAccount
+        toAccount = fromAccount
+        fromAccount = toAccountPreviousValue
+    }
+    
+    func send() async {
+//        guard
+        //make sure the account has this amount!!!!!!!!!!!!
+        // check faceid
+        alertMessage = .info(Constants.sendSuccessText)
+        // pop to route
+    }
+    
+    // MARK: - Private
+    
+    private func loadAccounts() async {
         accounts = [
             BankAccount(id: 0, amount: 1023.7, currency: Currency(id: 0, name: "Dollar", symbol: "USD"), name: "My dollar account"),
             BankAccount(id: 1, amount: 937, currency: Currency(id: 1, name: "EUR", symbol: "EUR"), name: "My euro account")
@@ -40,16 +72,13 @@ final class UserAccountTransferViewModel: ObservableObject {
         }
     }
     
-    func swap() {
-        let toAccountPreviousValue = toAccount
-        toAccount = fromAccount
-        fromAccount = toAccountPreviousValue
-    }
-    
-    func send() async {
-        // check faceid
-        alertMessage = .info(Constants.sendSuccessText)
-        // pop to route
+    private func loadCurrencies() async {
+        currencies = [
+            Currency(id: 0, name: "Dollar", symbol: "USD"),
+            Currency(id: 1, name: "EUR", symbol: "EUR")
+        ]
+        
+        selectedCurrency = currencies.first
     }
     
 }
