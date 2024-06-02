@@ -2,7 +2,10 @@
 *.xcuserstate
 .DS_Store
 xcschememanagement.plist
-/MyBank.xcworkspace/xcuserdata/*
+MyBank/MyBank.xcworkspace/xcuserdata/*
+MyBank/MyBank.xcodeproj/xcuserdata/*
+./MyBank.xcodeproj/MyBank.xcworkspace/xcuserdata
+xcuserdata/
 /build
 IDEWorkspaceChecks.plist
 Breakpoints_v2.xcbkptlist

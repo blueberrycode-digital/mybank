@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0325E52B2C0914EC0043463A /* MyBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E52A2C0914EC0043463A /* MyBankApp.swift */; };
-		0325E52D2C0914EC0043463A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E52C2C0914EC0043463A /* ContentView.swift */; };
+		0325E52D2C0914EC0043463A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E52C2C0914EC0043463A /* MainView.swift */; };
 		0325E52F2C0914ED0043463A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0325E52E2C0914ED0043463A /* Assets.xcassets */; };
 		0325E5322C0914ED0043463A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0325E5312C0914ED0043463A /* Preview Assets.xcassets */; };
 		0325E53C2C0914ED0043463A /* MyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E53B2C0914ED0043463A /* MyBankTests.swift */; };
@@ -16,7 +16,6 @@
 		0325E5482C0914ED0043463A /* MyBankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E5472C0914ED0043463A /* MyBankUITestsLaunchTests.swift */; };
 		033195E12C0A08740064799B /* MyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033195E02C0A08740064799B /* MyFoundation.framework */; };
 		033195E22C0A08740064799B /* MyFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 033195E02C0A08740064799B /* MyFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		033886662C0916D000F1B526 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886652C0916D000F1B526 /* HomeView.swift */; };
 		033886682C09220900F1B526 /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886672C0916F000F1B526 /* TransferView.swift */; };
 		0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */; };
 		0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */; };
@@ -24,6 +23,11 @@
 		033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886762C09827700F1B526 /* PrimaryButtonView.swift */; };
 		0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338867B2C0984DA00F1B526 /* BankAccount.swift */; };
 		033CFB422C0A44BC008C4B66 /* TransferSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */; };
+		03BE81FC2C0BC23000AD253E /* SwapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */; };
+		03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */; };
+		03BE82012C0C310B00AD253E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE82002C0C310B00AD253E /* LoginView.swift */; };
+		03BE82032C0C321300AD253E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE82022C0C321300AD253E /* LoginViewModel.swift */; };
+		03BE82052C0C336000AD253E /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE82042C0C336000AD253E /* ExchangeRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +64,7 @@
 /* Begin PBXFileReference section */
 		0325E5272C0914EC0043463A /* MyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0325E52A2C0914EC0043463A /* MyBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankApp.swift; sourceTree = "<group>"; };
-		0325E52C2C0914EC0043463A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0325E52C2C0914EC0043463A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0325E52E2C0914ED0043463A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0325E5312C0914ED0043463A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0325E5372C0914ED0043463A /* MyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +73,6 @@
 		0325E5452C0914ED0043463A /* MyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankUITests.swift; sourceTree = "<group>"; };
 		0325E5472C0914ED0043463A /* MyBankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		033195E02C0A08740064799B /* MyFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MyFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		033886652C0916D000F1B526 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		033886672C0916F000F1B526 /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
 		0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferView.swift; sourceTree = "<group>"; };
 		0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferViewModel.swift; sourceTree = "<group>"; };
@@ -77,6 +80,11 @@
 		033886762C09827700F1B526 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		0338867B2C0984DA00F1B526 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSectionHeaderView.swift; sourceTree = "<group>"; };
+		03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButtonView.swift; sourceTree = "<group>"; };
+		03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
+		03BE82002C0C310B00AD253E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		03BE82022C0C321300AD253E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		03BE82042C0C336000AD253E /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +142,6 @@
 				0338866E2C09606700F1B526 /* Networking */,
 				033886622C0916AD00F1B526 /* Pages */,
 				033886612C0916A500F1B526 /* App */,
-				0325E52C2C0914EC0043463A /* ContentView.swift */,
 				0325E52E2C0914ED0043463A /* Assets.xcassets */,
 				0325E5302C0914ED0043463A /* Preview Content */,
 			);
@@ -185,18 +192,20 @@
 		033886622C0916AD00F1B526 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				03BE81FF2C0C30EC00AD253E /* Main */,
 				033886642C0916C600F1B526 /* Transfer */,
-				033886632C0916BC00F1B526 /* Home */,
+				033886632C0916BC00F1B526 /* Login */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
 		};
-		033886632C0916BC00F1B526 /* Home */ = {
+		033886632C0916BC00F1B526 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				033886652C0916D000F1B526 /* HomeView.swift */,
+				03BE82002C0C310B00AD253E /* LoginView.swift */,
+				03BE82022C0C321300AD253E /* LoginViewModel.swift */,
 			);
-			path = Home;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		033886642C0916C600F1B526 /* Transfer */ = {
@@ -212,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */,
+				03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */,
 				033886722C09806B00F1B526 /* TransferSectionView.swift */,
 				033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */,
 				0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */,
@@ -230,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				033886752C09826B00F1B526 /* UI */,
+				03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,8 +257,17 @@
 			isa = PBXGroup;
 			children = (
 				0338867B2C0984DA00F1B526 /* BankAccount.swift */,
+				03BE82042C0C336000AD253E /* ExchangeRate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		03BE81FF2C0C30EC00AD253E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0325E52C2C0914EC0043463A /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,15 +402,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				033CFB422C0A44BC008C4B66 /* TransferSectionHeaderView.swift in Sources */,
-				033886662C0916D000F1B526 /* HomeView.swift in Sources */,
 				033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */,
 				033886682C09220900F1B526 /* TransferView.swift in Sources */,
 				0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */,
 				0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */,
-				0325E52D2C0914EC0043463A /* ContentView.swift in Sources */,
+				0325E52D2C0914EC0043463A /* MainView.swift in Sources */,
+				03BE82012C0C310B00AD253E /* LoginView.swift in Sources */,
 				033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */,
+				03BE82032C0C321300AD253E /* LoginViewModel.swift in Sources */,
 				0325E52B2C0914EC0043463A /* MyBankApp.swift in Sources */,
+				03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */,
 				0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */,
+				03BE82052C0C336000AD253E /* ExchangeRate.swift in Sources */,
+				03BE81FC2C0BC23000AD253E /* SwapButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,19 +7,26 @@
 
 import Foundation
 import MyFoundation
+import struct SwiftUI.EnvironmentObject
 
 @MainActor
 final class UserAccountTransferViewModel: ObservableObject {
     
     private struct Constants {
         static let sendSuccessText = "If this were a real app, the money would have been transfered between accounts."
+        static let insufficientFundsText = "Insufficient funds!"
     }
+    
+    @EnvironmentObject private var bankInfo: BankInfo
     
     @Published
     private(set) var accounts = [BankAccount]()
     
     @Published
     private(set) var currencies = [Currency]()
+    
+    @Published
+    private(set) var exchangeRates = [ExchangeRate]()
     
     @Published
     private(set) var fromAccount: BankAccount?
@@ -39,10 +46,7 @@ final class UserAccountTransferViewModel: ObservableObject {
     // MARK: - Internal
     
     func load() async {
-        async let accounts: () = loadAccounts()
-        async let currencies: () = loadCurrencies()
-        
-        _ = await (accounts, currencies)
+        await loadAccounts()
     }
     
     func swap() {
@@ -52,8 +56,20 @@ final class UserAccountTransferViewModel: ObservableObject {
     }
     
     func send() async {
-//        guard
-        //make sure the account has this amount!!!!!!!!!!!!
+        guard let fromAccount,
+              let selectedCurrency else {
+            return
+        }
+        let convertedFromAmount: Double
+        if fromAccount.currency == selectedCurrency {
+            convertedFromAmount = fromAccount.amount
+        } else {
+            convertedFromAmount = CurrencyConverter.convert(amount: fromAccount.amount, fromCurrency: fromAccount.currency, toCurrency: selectedCurrency)
+        }
+        guard amount <= convertedFromAmount else {
+            alertMessage = .error(Constants.insufficientFundsText)
+            return
+        }
         // check faceid
         alertMessage = .info(Constants.sendSuccessText)
         // pop to route
@@ -72,13 +88,13 @@ final class UserAccountTransferViewModel: ObservableObject {
         }
     }
     
-    private func loadCurrencies() async {
-        currencies = [
-            Currency(id: 0, name: "Dollar", symbol: "USD"),
-            Currency(id: 1, name: "EUR", symbol: "EUR")
-        ]
+    //
+    
+    init() {
+        self.currencies = bankInfo.currencies
+        self.exchangeRates = bankInfo.exchangeRates
         
-        selectedCurrency = currencies.first
+        self.selectedCurrency = currencies.first
     }
     
 }

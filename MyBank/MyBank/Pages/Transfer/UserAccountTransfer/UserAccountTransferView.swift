@@ -58,7 +58,6 @@ struct UserAccountTransferView: View {
     
     private var currencySelector: some View {
         Picker("", selection: $viewModel.selectedCurrency) {
-            Text("---").tag(Int?(nil))
             ForEach(viewModel.currencies, id: \.self) {
                 Text($0.symbol).tag(Optional($0))
             }
@@ -82,17 +81,6 @@ struct UserAccountTransferView: View {
     
     init() {
         self.viewModel = UserAccountTransferViewModel()
-    }
-    
-}
-
-private struct SwapButtonView: View {
-    
-    var body: some View {
-        Image(systemName: "rectangle.2.swap")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 35)
     }
     
 }
