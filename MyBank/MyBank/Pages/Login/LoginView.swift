@@ -10,40 +10,46 @@ import SwiftUI
 
 struct LoginView: View {
     
+    struct Constants {
+        static let progressSpacing: CGFloat = 10
+        static let padding: CGFloat = 10
+    }
+    
     @ObservedObject
     private var viewModel: LoginViewModel
     
-    private var startButton: some View {
-        Button(action: {
-            // go to next page
-        }, label: {
-            PrimaryButtonView(title: "Open app")
-        })
+    // MARK: - Private views
+    
+    private var startButtonView: some View {
+        PrimaryButtonView(title: "Open app")
     }
     
     @ViewBuilder
     private var startButtonLink: some View {
         if let bankInfo = viewModel.bankInfo {
-            NavigationLink(destination: MainView().environmentObject(bankInfo)) {
-                startButton
+            NavigationLink(destination: MainView(bankInfo: bankInfo)) {
+                startButtonView
             }
         } else {
-            startButton
+            startButtonView
+                .opacity(AppConstants.disabledOpacity)
         }
     }
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 10) {
+            VStack(spacing: Constants.progressSpacing) {
                 startButtonLink
                 ProgressView()
                     .opacity(viewModel.bankInfo == nil ? 1 : 0)
-            }.padding(10)
+            }.padding(Constants.padding)
         }.task {
             // only first time!!!!!!!
             await viewModel.load()
         }
     }
+    
+    // MARK: - Init
     
     init() {
         self.viewModel = LoginViewModel()

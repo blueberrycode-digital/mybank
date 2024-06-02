@@ -19,7 +19,7 @@ final class LoginViewModel: ObservableObject {
         async let currenciesRequest = loadCurrencies()
         async let exchangeRatesRequest = loadExchangeRates()
         
-        try? await Task.sleep(nanoseconds: 2 * 1_000_000_000) // 1 second in nanoseconds
+        try? await Task.sleep(nanoseconds: 1 * 1_000_000_000) // 1 second in nanoseconds
         
         let result = await (currenciesRequest, exchangeRatesRequest)
         bankInfo = BankInfo(currencies: result.0, exchangeRates: result.1)
@@ -36,18 +36,13 @@ final class LoginViewModel: ObservableObject {
     
     private func loadExchangeRates() async -> [ExchangeRate] {
         return [
-            ExchangeRate(fromId: 0, toId: 1, rate: 0.92)
+            ExchangeRate(fromId: 0, toId: 1, value: 0.92)
         ]
     }
     
 }
 
-final class BankInfo: ObservableObject {
+struct BankInfo {
     let currencies: [Currency]
     let exchangeRates: [ExchangeRate]
-    
-    init(currencies: [Currency], exchangeRates: [ExchangeRate]) {
-        self.currencies = currencies
-        self.exchangeRates = exchangeRates
-    }
 }

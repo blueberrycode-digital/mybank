@@ -12,19 +12,28 @@ struct TransferSectionView: View {
     
     let sectionTitle: String
     let account: BankAccount?
+    let allCurrencies: [Currency]
     
     // MARK: Private
     
     private func accountNameView(account: BankAccount) -> some View {
         Text(account.name)
             .font(.body)
-            .foregroundStyle(.black)
+            .foregroundStyle(AppTheme.textColor)
+    }
+    
+    private static func formattedAmount(_ value: Double) -> String {
+        String(format: "%.2f", value)
+    }
+    
+    private func currencySymbol(forId currencyId: Int) -> String {
+        allCurrencies.first(where: { $0.id == currencyId })?.symbol ?? "--"
     }
     
     private func amountView(account: BankAccount) -> some View {
-        Text("\(String(format: "%.2f", account.amount)) \(account.currency.symbol)")
+        Text("\(Self.formattedAmount(account.amount)) \(currencySymbol(forId: account.currency))")
             .font(.body)
-            .foregroundStyle(.black)
+            .foregroundStyle(AppTheme.textColor)
     }
     
     // MARK: - Views

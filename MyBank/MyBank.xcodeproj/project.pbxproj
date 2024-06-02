@@ -23,6 +23,8 @@
 		033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886762C09827700F1B526 /* PrimaryButtonView.swift */; };
 		0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338867B2C0984DA00F1B526 /* BankAccount.swift */; };
 		033CFB422C0A44BC008C4B66 /* TransferSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */; };
+		0365E0B12C0D10CF00E071F7 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B02C0D10CF00E071F7 /* AppTheme.swift */; };
+		0365E0B32C0D118F00E071F7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B22C0D118F00E071F7 /* AppConstants.swift */; };
 		03BE81FC2C0BC23000AD253E /* SwapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */; };
 		03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */; };
 		03BE82012C0C310B00AD253E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE82002C0C310B00AD253E /* LoginView.swift */; };
@@ -80,6 +82,8 @@
 		033886762C09827700F1B526 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		0338867B2C0984DA00F1B526 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSectionHeaderView.swift; sourceTree = "<group>"; };
+		0365E0B02C0D10CF00E071F7 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		0365E0B22C0D118F00E071F7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButtonView.swift; sourceTree = "<group>"; };
 		03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 		03BE82002C0C310B00AD253E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -239,18 +243,20 @@
 		033886742C09826300F1B526 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				033886752C09826B00F1B526 /* UI */,
+				033886752C09826B00F1B526 /* UIComponents */,
 				03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */,
+				0365E0B02C0D10CF00E071F7 /* AppTheme.swift */,
+				0365E0B22C0D118F00E071F7 /* AppConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		033886752C09826B00F1B526 /* UI */ = {
+		033886752C09826B00F1B526 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				033886762C09827700F1B526 /* PrimaryButtonView.swift */,
 			);
-			path = UI;
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		0338867A2C0984D000F1B526 /* Models */ = {
@@ -402,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				033CFB422C0A44BC008C4B66 /* TransferSectionHeaderView.swift in Sources */,
+				0365E0B12C0D10CF00E071F7 /* AppTheme.swift in Sources */,
 				033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */,
 				033886682C09220900F1B526 /* TransferView.swift in Sources */,
 				0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */,
@@ -411,6 +418,7 @@
 				033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */,
 				03BE82032C0C321300AD253E /* LoginViewModel.swift in Sources */,
 				0325E52B2C0914EC0043463A /* MyBankApp.swift in Sources */,
+				0365E0B32C0D118F00E071F7 /* AppConstants.swift in Sources */,
 				03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */,
 				0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */,
 				03BE82052C0C336000AD253E /* ExchangeRate.swift in Sources */,

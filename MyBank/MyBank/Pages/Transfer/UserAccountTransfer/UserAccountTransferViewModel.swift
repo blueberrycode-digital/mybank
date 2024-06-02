@@ -7,7 +7,6 @@
 
 import Foundation
 import MyFoundation
-import struct SwiftUI.EnvironmentObject
 
 @MainActor
 final class UserAccountTransferViewModel: ObservableObject {
@@ -15,9 +14,8 @@ final class UserAccountTransferViewModel: ObservableObject {
     private struct Constants {
         static let sendSuccessText = "If this were a real app, the money would have been transfered between accounts."
         static let insufficientFundsText = "Insufficient funds!"
+        static let exchangeRateNotFound = "Exchange rate not found"
     }
-    
-    @EnvironmentObject private var bankInfo: BankInfo
     
     @Published
     private(set) var accounts = [BankAccount]()
@@ -41,11 +39,14 @@ final class UserAccountTransferViewModel: ObservableObject {
     var amount = 0.0
     
     @Published
-    var selectedCurrency: Currency?// = Currency(id: 1, name: "EUR", symbol: "EUR") //!!!!!!!!!
+    var selectedCurrency: Currency?
+    
+    let bankInfo: BankInfo
     
     // MARK: - Internal
     
     func load() async {
+        loadBankInfo(bankInfo)
         await loadAccounts()
     }
     
@@ -58,29 +59,45 @@ final class UserAccountTransferViewModel: ObservableObject {
     func send() async {
         guard let fromAccount,
               let selectedCurrency else {
+            // alert???
             return
         }
-        let convertedFromAmount: Double
-        if fromAccount.currency == selectedCurrency {
-            convertedFromAmount = fromAccount.amount
-        } else {
-            convertedFromAmount = CurrencyConverter.convert(amount: fromAccount.amount, fromCurrency: fromAccount.currency, toCurrency: selectedCurrency)
+        guard let convertedSourceAmount = Self.convertedSourceAmount(fromAccount: fromAccount, selectedCurrency: selectedCurrency, exchangeRates: bankInfo.exchangeRates) else {
+            alertMessage = .info(Constants.exchangeRateNotFound)
+            // log!!!!!!!
+            return
         }
-        guard amount <= convertedFromAmount else {
+        
+        guard amount <= convertedSourceAmount else {
             alertMessage = .error(Constants.insufficientFundsText)
             return
         }
-        // check faceid
+        // check faceid???
         alertMessage = .info(Constants.sendSuccessText)
         // pop to route
     }
     
     // MARK: - Private
     
+    private static func convertedSourceAmount(fromAccount: BankAccount, selectedCurrency: Currency, exchangeRates: [ExchangeRate]) -> Double? {
+        if fromAccount.currency == selectedCurrency.id {
+            return fromAccount.amount
+        } else {
+            return CurrencyConverter.convert(amount: fromAccount.amount, fromCurrency: fromAccount.currency, toCurrency: selectedCurrency.id, exchangeRates: exchangeRates)
+        }
+    }
+    
+    private func loadBankInfo(_ bankInfo: BankInfo) {
+        self.currencies = bankInfo.currencies
+        self.exchangeRates = bankInfo.exchangeRates
+        
+        self.selectedCurrency = currencies.first
+    }
+    
     private func loadAccounts() async {
         accounts = [
-            BankAccount(id: 0, amount: 1023.7, currency: Currency(id: 0, name: "Dollar", symbol: "USD"), name: "My dollar account"),
-            BankAccount(id: 1, amount: 937, currency: Currency(id: 1, name: "EUR", symbol: "EUR"), name: "My euro account")
+            BankAccount(id: 0, amount: 1023.7, currency: 0, name: "My dollar account"),
+            BankAccount(id: 1, amount: 937, currency: 1, name: "My euro account")
         ]
         fromAccount = accounts.first
         if let toAccount = accounts[safe: 1] {
@@ -88,13 +105,10 @@ final class UserAccountTransferViewModel: ObservableObject {
         }
     }
     
-    //
+    // MARK: - Init
     
-    init() {
-        self.currencies = bankInfo.currencies
-        self.exchangeRates = bankInfo.exchangeRates
-        
-        self.selectedCurrency = currencies.first
+    init(bankInfo: BankInfo) {
+        self.bankInfo = bankInfo
     }
     
 }

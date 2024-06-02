@@ -10,5 +10,5 @@ import Foundation
 struct ExchangeRate: Hashable {
     let fromId: Int
     let toId: Int
-    let rate: Double
+    let value: Double
 }

@@ -10,7 +10,7 @@ import Foundation
 struct BankAccount: Hashable {
     let id: Int
     let amount: Double
-    let currency: Currency
+    let currency: Int
     let name: String
 }
 

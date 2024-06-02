@@ -11,6 +11,12 @@ import SwiftUI
 
 struct UserAccountTransferView: View {
     
+    private struct Constants {
+        static let amountSpacing: CGFloat = 12
+        static let sectionSpacing: CGFloat = 50
+        static let sectionPadding: CGFloat = 15
+    }
+    
     @ObservedObject
     private var viewModel: UserAccountTransferViewModel
     
@@ -35,7 +41,7 @@ struct UserAccountTransferView: View {
     }
     
     private var amountSection: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: Constants.amountSpacing) {
             TransferSectionHeaderView(title: "Amount")
             amountView
         }
@@ -66,21 +72,25 @@ struct UserAccountTransferView: View {
     }
     
     var body: some View {
-        VStack(spacing: 50) {
-            TransferSectionView(sectionTitle: "From", account: viewModel.fromAccount)
+        VStack(spacing: Constants.sectionSpacing) {
+            TransferSectionView(sectionTitle: "From", account: viewModel.fromAccount, allCurrencies: viewModel.bankInfo.currencies)
             swapButton
-            TransferSectionView(sectionTitle: "To", account: viewModel.toAccount)
+            TransferSectionView(sectionTitle: "To", account: viewModel.toAccount, allCurrencies: viewModel.bankInfo.currencies)
             amountSection
             Spacer()
             sendButton
-        }.task { // load only once???
+        }
+        .task { // load only once???
             await viewModel.load()
-        }.padding(15)
-            .customAlert($viewModel.alertMessage)
+        }
+        .padding(Constants.sectionPadding)
+        .customAlert($viewModel.alertMessage)
     }
     
-    init() {
-        self.viewModel = UserAccountTransferViewModel()
+    // MARK: - Init
+    
+    init(bankInfo: BankInfo) {
+        self.viewModel = UserAccountTransferViewModel(bankInfo: bankInfo)
     }
     
 }

@@ -9,8 +9,14 @@ import Foundation
 
 final class CurrencyConverter {
     
-    static func convert(amount: Double, fromCurrency: Currency, toCurrency: Currency) -> Double {
-        fatalError()
+    static func convert(amount: Double, fromCurrency: Int, toCurrency: Int, exchangeRates: [ExchangeRate]) -> Double? {
+        if let rate = exchangeRates.first(where: { $0.fromId == fromCurrency && $0.toId == toCurrency }) {
+            return amount * rate.value
+        }
+        if let rate = exchangeRates.first(where: { $0.fromId == toCurrency && $0.toId == fromCurrency }) {
+            return amount / rate.value
+        }
+        return nil
     }
     
 }

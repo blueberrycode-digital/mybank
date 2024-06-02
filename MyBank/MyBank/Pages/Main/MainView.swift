@@ -9,9 +9,11 @@ import SwiftUI
 
 struct MainView: View {
     
+    let bankInfo: BankInfo
+    
     var body: some View {
         TabView {
-            TransferView()
+            TransferView(bankInfo: bankInfo)
                 .tabItem {
                     Image(systemName: "paperplane")
                     Text("Transfer")
