@@ -5,8 +5,8 @@
 //  Created by DM (Personal) on 30/05/2024.
 //
 
-import XCTest
 @testable import MyBank
+import XCTest
 
 final class CurrencyConverterTests: XCTestCase {
     
