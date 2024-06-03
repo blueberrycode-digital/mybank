@@ -71,7 +71,7 @@ struct UserAccountTransferView: View {
         .pickerStyle(.menu)
     }
     
-    var body: some View {
+    private var loadedView: some View {
         VStack(spacing: Constants.sectionSpacing) {
             TransferSectionView(sectionTitle: "From", account: viewModel.fromAccount, allCurrencies: viewModel.bankInfo.currencies)
             swapButton
@@ -80,10 +80,20 @@ struct UserAccountTransferView: View {
             Spacer()
             sendButton
         }
-        .task { // load only once???
+        .padding(Constants.sectionPadding)
+        .disabled(viewModel.isLoading)
+        .opacity(viewModel.isLoading ? AppConstants.disabledOpacity : 1)
+    }
+    
+    var body: some View {
+        ZStack {
+            loadedView
+            if viewModel.isLoading {
+                ProgressView()
+            }
+        }.task { // load only once???
             await viewModel.load()
         }
-        .padding(Constants.sectionPadding)
         .customAlert($viewModel.alertMessage)
     }
     

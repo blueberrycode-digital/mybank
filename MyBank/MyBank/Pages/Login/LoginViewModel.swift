@@ -19,7 +19,7 @@ final class LoginViewModel: ObservableObject {
         async let currenciesRequest = loadCurrencies()
         async let exchangeRatesRequest = loadExchangeRates()
         
-        try? await Task.sleep(nanoseconds: 1 * 1_000_000_000) // 1 second in nanoseconds
+        try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
         
         let result = await (currenciesRequest, exchangeRatesRequest)
         bankInfo = BankInfo(currencies: result.0, exchangeRates: result.1)

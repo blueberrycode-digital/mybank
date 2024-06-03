@@ -15,6 +15,7 @@ final class UserAccountTransferViewModel: ObservableObject {
         static let sendSuccessText = "If this were a real app, the money would have been transfered between accounts."
         static let insufficientFundsText = "Insufficient funds!"
         static let exchangeRateNotFound = "Exchange rate not found"
+        static let amountCantBeZero = "Amount can't be 0"
     }
     
     @Published
@@ -41,13 +42,18 @@ final class UserAccountTransferViewModel: ObservableObject {
     @Published
     var selectedCurrency: Currency?
     
+    @Published
+    private(set) var isLoading = false
+    
     let bankInfo: BankInfo
     
     // MARK: - Internal
     
     func load() async {
         loadBankInfo(bankInfo)
+        isLoading = true
         await loadAccounts()
+        isLoading = false
     }
     
     func swap() {
@@ -57,13 +63,17 @@ final class UserAccountTransferViewModel: ObservableObject {
     }
     
     func send() async {
+        guard amount != 0 else {
+            alertMessage = .error(Constants.amountCantBeZero)
+            return
+        }
         guard let fromAccount,
               let selectedCurrency else {
             // alert???
             return
         }
         guard let convertedSourceAmount = Self.convertedSourceAmount(fromAccount: fromAccount, selectedCurrency: selectedCurrency, exchangeRates: bankInfo.exchangeRates) else {
-            alertMessage = .info(Constants.exchangeRateNotFound)
+            alertMessage = .error(Constants.exchangeRateNotFound)
             // log!!!!!!!
             return
         }
@@ -95,6 +105,7 @@ final class UserAccountTransferViewModel: ObservableObject {
     }
     
     private func loadAccounts() async {
+        try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
         accounts = [
             BankAccount(id: 0, amount: 1023.7, currency: 0, name: "My dollar account"),
             BankAccount(id: 1, amount: 937, currency: 1, name: "My euro account")

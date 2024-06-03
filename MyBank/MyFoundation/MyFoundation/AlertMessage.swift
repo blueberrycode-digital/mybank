@@ -39,14 +39,14 @@ struct CustomAlertModifier: ViewModifier {
                 
             case .info(let string):
                 Alert(
-                    title: Text("Alert"),
+                    title: Text("Info"),
                     message: Text(string),
                     dismissButton: .default(Text("OK"))
                 )
                 
             case .error(let string):
                 Alert(
-                    title: Text("Alert"),
+                    title: Text("Error"),
                     message: Text(string),
                     dismissButton: .default(Text("OK"))
                 )

@@ -145,7 +145,6 @@
 			children = (
 				0338867A2C0984D000F1B526 /* Models */,
 				033886742C09826300F1B526 /* Common */,
-				0338866E2C09606700F1B526 /* Networking */,
 				033886622C0916AD00F1B526 /* Pages */,
 				033886612C0916A500F1B526 /* App */,
 				0325E52E2C0914ED0043463A /* Assets.xcassets */,
@@ -234,13 +233,6 @@
 				0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */,
 			);
 			path = UserAccountTransfer;
-			sourceTree = "<group>";
-		};
-		0338866E2C09606700F1B526 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		033886742C09826300F1B526 /* Common */ = {
