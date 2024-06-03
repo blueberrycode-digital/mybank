@@ -30,7 +30,7 @@ final class UserAccountTransferViewModelTests: XCTestCase {
     }
     
     @MainActor
-    func testExample() async {
+    func testLoad_AllPropertiesAreFilled() async {
         await viewModel.load()
         
         XCTAssertEqual(viewModel.currencies.count, 2)
@@ -39,6 +39,24 @@ final class UserAccountTransferViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.accounts.count, 2)
         XCTAssertEqual(viewModel.fromAccount?.id, 0)
         XCTAssertEqual(viewModel.toAccount?.id, 1)
+    }
+    
+    @MainActor
+    func testSendZeroAmount_ShowError() async {
+        await viewModel.load()
+        await viewModel.send()
+        
+        XCTAssertTrue(viewModel.alertMessage.isOfType(.error))
+    }
+    
+    @MainActor
+    func testAmountIsMoreThanInSourceAccount_ShowError() async {
+        await viewModel.load()
+        viewModel.amount = 1_000_000
+        
+        await viewModel.send()
+        
+        XCTAssertTrue(viewModel.alertMessage.isOfType(.error))
     }
     
 }
