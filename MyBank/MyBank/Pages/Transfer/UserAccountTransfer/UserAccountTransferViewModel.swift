@@ -13,11 +13,12 @@ import Resolver
 final class UserAccountTransferViewModel: ObservableObject {
     
     private struct Constants {
-        static let sendSuccessText = "If this were a real app, the money would have been transfered between accounts."
-        static let insufficientFundsText = "Insufficient funds!"
-        static let exchangeRateNotFound = "Exchange rate not found"
-        static let amountCantBeZero = "Amount can't be 0"
-        static let errorLoadingAccounts = "Error loading accounts"
+        static let unableToLoadDataText = "Unable to load data"
+        static let insufficientFundsText = "Insufficient funds"
+        static let exchangeRateNotFoundText = "Exchange rate not found"
+        static let amountCantBeZeroText = "Amount can't be 0"
+        static let errorLoadingAccountsText = "Error loading accounts"
+        static let updateSuccessful = "Update successful"
     }
     
     @Injected
@@ -71,37 +72,36 @@ final class UserAccountTransferViewModel: ObservableObject {
     
     func send() async {
         guard amount != 0 else {
-            alertMessage = .error(Constants.amountCantBeZero)
+            alertMessage = .error(Constants.amountCantBeZeroText)
             return
         }
         guard let fromAccount,
+              let toAccount,
               let selectedCurrency else {
-            // alert
+            alertMessage = .error(Constants.unableToLoadDataText)
             return
         }
-        guard let convertedSourceAmount = Self.convertedSourceAmount(fromAccount: fromAccount, selectedCurrency: selectedCurrency, exchangeRates: bankInfo.exchangeRates) else {
-            alertMessage = .error(Constants.exchangeRateNotFound)
-            // log!!!!!!!
+        guard let amountInSourceAccountCurrency = CurrencyConverter.convert(amount: amount, fromCurrency: selectedCurrency.id, toCurrency: fromAccount.currency, exchangeRates: exchangeRates),
+              let amountInDestinationAccountCurrency = CurrencyConverter.convert(amount: amount, fromCurrency: selectedCurrency.id, toCurrency: toAccount.currency, exchangeRates: exchangeRates) else {
+            alertMessage = .error(Constants.exchangeRateNotFoundText)
             return
         }
         
-        guard amount <= convertedSourceAmount else {
+        guard amountInSourceAccountCurrency <= fromAccount.amount else {
             alertMessage = .error(Constants.insufficientFundsText)
             return
         }
-        alertMessage = .info(Constants.sendSuccessText)
-        // pop to route
+        
+        let updatedFromAmount = fromAccount.amount - amountInSourceAccountCurrency
+        let updatedToAmount = toAccount.amount + amountInDestinationAccountCurrency
+        
+        self.fromAccount?.setAmount(updatedFromAmount)
+        self.toAccount?.setAmount(updatedToAmount)
+        
+        alertMessage = .info(Constants.updateSuccessful)
     }
     
     // MARK: - Private
-    
-    private static func convertedSourceAmount(fromAccount: BankAccount, selectedCurrency: Currency, exchangeRates: [ExchangeRate]) -> Double? {
-        if fromAccount.currency == selectedCurrency.id {
-            return fromAccount.amount
-        } else {
-            return CurrencyConverter.convert(amount: fromAccount.amount, fromCurrency: fromAccount.currency, toCurrency: selectedCurrency.id, exchangeRates: exchangeRates)
-        }
-    }
     
     private func loadBankInfo(_ bankInfo: BankInfo) {
         self.currencies = bankInfo.currencies
@@ -119,7 +119,7 @@ final class UserAccountTransferViewModel: ObservableObject {
                 self.toAccount = toAccount
             }
         } catch {
-            alertMessage = .error(Constants.errorLoadingAccounts)
+            alertMessage = .error(Constants.errorLoadingAccountsText)
         }
     }
     

@@ -9,7 +9,11 @@ import Foundation
 
 struct BankAccount: Hashable {
     let id: Int
-    let amount: Double
+    private(set) var amount: Double
     let currency: Int
     let name: String
+    
+    mutating func setAmount(_ amount: Double) {
+        self.amount = amount
+    }
 }

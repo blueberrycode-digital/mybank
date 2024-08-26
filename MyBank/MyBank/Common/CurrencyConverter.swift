@@ -10,6 +10,10 @@ import Foundation
 final class CurrencyConverter {
     
     static func convert(amount: Double, fromCurrency: Int, toCurrency: Int, exchangeRates: [ExchangeRate]) -> Double? {
+        guard fromCurrency != toCurrency else {
+            return amount
+        }
+        
         if let rate = exchangeRates.first(where: { $0.fromId == fromCurrency && $0.toId == toCurrency }) {
             return amount * rate.value
         }
