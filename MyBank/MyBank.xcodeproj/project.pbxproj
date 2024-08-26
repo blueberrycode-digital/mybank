@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031F0B0E2C0EA90E002AFB78 /* CurrencyNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F0B0D2C0EA90E002AFB78 /* CurrencyNetworkService.swift */; };
 		0325E52B2C0914EC0043463A /* MyBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E52A2C0914EC0043463A /* MyBankApp.swift */; };
 		0325E52D2C0914EC0043463A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325E52C2C0914EC0043463A /* MainView.swift */; };
 		0325E52F2C0914ED0043463A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0325E52E2C0914ED0043463A /* Assets.xcassets */; };
@@ -27,11 +28,22 @@
 		0365E0B32C0D118F00E071F7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B22C0D118F00E071F7 /* AppConstants.swift */; };
 		0365E0B52C0D335400E071F7 /* UserAccountTransferViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B42C0D335400E071F7 /* UserAccountTransferViewModelTests.swift */; };
 		038E5A532C0D54C9005C26AA /* AlertMessage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038E5A522C0D54C9005C26AA /* AlertMessage+Extension.swift */; };
+		03B2409E2C0EAAD2009492C5 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 03B2409D2C0EAAD2009492C5 /* Resolver */; };
+		03B240A12C0EAB6D009492C5 /* CurrencyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B240A02C0EAB6D009492C5 /* CurrencyMapper.swift */; };
+		03B240A42C0EAB8F009492C5 /* CurrencyDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B240A32C0EAB8F009492C5 /* CurrencyDto.swift */; };
+		03B240A72C0EAE41009492C5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 03B240A62C0EAE41009492C5 /* Alamofire */; };
+		03B240A92C0EAE83009492C5 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B240A82C0EAE83009492C5 /* Endpoints.swift */; };
+		03B240AB2C0EAECB009492C5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B240AA2C0EAECB009492C5 /* NetworkService.swift */; };
+		03B240AE2C0EB323009492C5 /* ResolverLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B240AD2C0EB323009492C5 /* ResolverLoader.swift */; };
 		03BE81FC2C0BC23000AD253E /* SwapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */; };
 		03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */; };
 		03BE82012C0C310B00AD253E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE82002C0C310B00AD253E /* LoginView.swift */; };
 		03BE82032C0C321300AD253E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE82022C0C321300AD253E /* LoginViewModel.swift */; };
 		03BE82052C0C336000AD253E /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE82042C0C336000AD253E /* ExchangeRate.swift */; };
+		03D199E72C7D05CB005EAB22 /* AccountsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D199E62C7D05CB005EAB22 /* AccountsNetworkService.swift */; };
+		03D199E92C7D0622005EAB22 /* BankAccountDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D199E82C7D0622005EAB22 /* BankAccountDto.swift */; };
+		03D199EB2C7D0635005EAB22 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D199EA2C7D0634005EAB22 /* Currency.swift */; };
+		03D199ED2C7D06BE005EAB22 /* BankAccountMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D199EC2C7D06BE005EAB22 /* BankAccountMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		031F0B0D2C0EA90E002AFB78 /* CurrencyNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkService.swift; sourceTree = "<group>"; };
 		0325E5272C0914EC0043463A /* MyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0325E52A2C0914EC0043463A /* MyBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankApp.swift; sourceTree = "<group>"; };
 		0325E52C2C0914EC0043463A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -88,11 +101,20 @@
 		0365E0B22C0D118F00E071F7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		0365E0B42C0D335400E071F7 /* UserAccountTransferViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferViewModelTests.swift; sourceTree = "<group>"; };
 		038E5A522C0D54C9005C26AA /* AlertMessage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertMessage+Extension.swift"; sourceTree = "<group>"; };
+		03B240A02C0EAB6D009492C5 /* CurrencyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMapper.swift; sourceTree = "<group>"; };
+		03B240A32C0EAB8F009492C5 /* CurrencyDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDto.swift; sourceTree = "<group>"; };
+		03B240A82C0EAE83009492C5 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		03B240AA2C0EAECB009492C5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		03B240AD2C0EB323009492C5 /* ResolverLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverLoader.swift; sourceTree = "<group>"; };
 		03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButtonView.swift; sourceTree = "<group>"; };
 		03BE81FD2C0C2C4500AD253E /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 		03BE82002C0C310B00AD253E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		03BE82022C0C321300AD253E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03BE82042C0C336000AD253E /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		03D199E62C7D05CB005EAB22 /* AccountsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsNetworkService.swift; sourceTree = "<group>"; };
+		03D199E82C7D0622005EAB22 /* BankAccountDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountDto.swift; sourceTree = "<group>"; };
+		03D199EA2C7D0634005EAB22 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		03D199EC2C7D06BE005EAB22 /* BankAccountMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03B240A72C0EAE41009492C5 /* Alamofire in Frameworks */,
+				03B2409E2C0EAAD2009492C5 /* Resolver in Frameworks */,
 				033195E12C0A08740064799B /* MyFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +145,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031F0B0C2C0EA906002AFB78 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				031F0B0D2C0EA90E002AFB78 /* CurrencyNetworkService.swift */,
+				03D199E62C7D05CB005EAB22 /* AccountsNetworkService.swift */,
+				03B240A82C0EAE83009492C5 /* Endpoints.swift */,
+				03B240AA2C0EAECB009492C5 /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		0325E51E2C0914EC0043463A = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +180,10 @@
 		0325E5292C0914EC0043463A /* MyBank */ = {
 			isa = PBXGroup;
 			children = (
+				03B240AC2C0EB31A009492C5 /* DI */,
+				03B240A22C0EAB83009492C5 /* Dtos */,
+				03B2409F2C0EAB66009492C5 /* Mappers */,
+				031F0B0C2C0EA906002AFB78 /* Networking */,
 				0338867A2C0984D000F1B526 /* Models */,
 				033886742C09826300F1B526 /* Common */,
 				033886622C0916AD00F1B526 /* Pages */,
@@ -261,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				0338867B2C0984DA00F1B526 /* BankAccount.swift */,
+				03D199EA2C7D0634005EAB22 /* Currency.swift */,
 				03BE82042C0C336000AD253E /* ExchangeRate.swift */,
 			);
 			path = Models;
@@ -272,6 +312,32 @@
 				038E5A522C0D54C9005C26AA /* AlertMessage+Extension.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		03B2409F2C0EAB66009492C5 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				03D199EC2C7D06BE005EAB22 /* BankAccountMapper.swift */,
+				03B240A02C0EAB6D009492C5 /* CurrencyMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		03B240A22C0EAB83009492C5 /* Dtos */ = {
+			isa = PBXGroup;
+			children = (
+				03B240A32C0EAB8F009492C5 /* CurrencyDto.swift */,
+				03D199E82C7D0622005EAB22 /* BankAccountDto.swift */,
+			);
+			path = Dtos;
+			sourceTree = "<group>";
+		};
+		03B240AC2C0EB31A009492C5 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				03B240AD2C0EB323009492C5 /* ResolverLoader.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		03BE81FF2C0C30EC00AD253E /* Main */ = {
@@ -299,6 +365,10 @@
 			dependencies = (
 			);
 			name = MyBank;
+			packageProductDependencies = (
+				03B2409D2C0EAAD2009492C5 /* Resolver */,
+				03B240A62C0EAE41009492C5 /* Alamofire */,
+			);
 			productName = MyBank;
 			productReference = 0325E5272C0914EC0043463A /* MyBank.app */;
 			productType = "com.apple.product-type.application";
@@ -371,6 +441,10 @@
 				Base,
 			);
 			mainGroup = 0325E51E2C0914EC0043463A;
+			packageReferences = (
+				031F0B0F2C0EA9BA002AFB78 /* XCRemoteSwiftPackageReference "Resolver" */,
+				03B240A52C0EAE37009492C5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0325E5282C0914EC0043463A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -418,13 +492,23 @@
 				033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */,
 				033886682C09220900F1B526 /* TransferView.swift in Sources */,
 				0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */,
+				03B240A42C0EAB8F009492C5 /* CurrencyDto.swift in Sources */,
+				03D199EB2C7D0635005EAB22 /* Currency.swift in Sources */,
 				0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */,
 				0325E52D2C0914EC0043463A /* MainView.swift in Sources */,
+				03D199ED2C7D06BE005EAB22 /* BankAccountMapper.swift in Sources */,
 				03BE82012C0C310B00AD253E /* LoginView.swift in Sources */,
 				033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */,
+				03D199E72C7D05CB005EAB22 /* AccountsNetworkService.swift in Sources */,
 				03BE82032C0C321300AD253E /* LoginViewModel.swift in Sources */,
 				0325E52B2C0914EC0043463A /* MyBankApp.swift in Sources */,
+				03D199E92C7D0622005EAB22 /* BankAccountDto.swift in Sources */,
+				03B240A12C0EAB6D009492C5 /* CurrencyMapper.swift in Sources */,
+				03B240AB2C0EAECB009492C5 /* NetworkService.swift in Sources */,
 				0365E0B32C0D118F00E071F7 /* AppConstants.swift in Sources */,
+				03B240A92C0EAE83009492C5 /* Endpoints.swift in Sources */,
+				03B240AE2C0EB323009492C5 /* ResolverLoader.swift in Sources */,
+				031F0B0E2C0EA90E002AFB78 /* CurrencyNetworkService.swift in Sources */,
 				03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */,
 				0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */,
 				03BE82052C0C336000AD253E /* ExchangeRate.swift in Sources */,
@@ -760,6 +844,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		031F0B0F2C0EA9BA002AFB78 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+		03B240A52C0EAE37009492C5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03B2409D2C0EAAD2009492C5 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 031F0B0F2C0EA9BA002AFB78 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		03B240A62C0EAE41009492C5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03B240A52C0EAE37009492C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0325E51F2C0914EC0043463A /* Project object */;
 }

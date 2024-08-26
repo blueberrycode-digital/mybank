@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Resolver
 
 @MainActor
 final class LoginViewModel: ObservableObject {
@@ -13,25 +14,30 @@ final class LoginViewModel: ObservableObject {
     @Published
     private(set) var bankInfo: BankInfo?
     
+    // MARK: - Private properties
+    
+    @Injected
+    private var currencyService: CurrencyNetworkService
+    
     // MARK: - Internal
     
     func load() async {
-        async let currenciesRequest = loadCurrencies()
-        async let exchangeRatesRequest = loadExchangeRates()
-        
-        try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
-        
-        let result = await (currenciesRequest, exchangeRatesRequest)
-        bankInfo = BankInfo(currencies: result.0, exchangeRates: result.1)
+        do {
+            async let currenciesRequest = loadCurrencies()
+            async let exchangeRatesRequest = loadExchangeRates()
+            
+            let result = try await (currenciesRequest, exchangeRatesRequest)
+            bankInfo = BankInfo(currencies: result.0, exchangeRates: result.1)
+        } catch {
+            // show error
+        }
     }
     
     // MARK: - Private
     
-    private func loadCurrencies() async -> [Currency] {
-        return [
-            Currency(id: 0, name: "Dollar", symbol: "USD"),
-            Currency(id: 1, name: "EUR", symbol: "EUR")
-        ]
+    private func loadCurrencies() async throws -> [Currency] {
+        let dtos = try await currencyService.load()
+        return dtos.map { CurrencyMapper.model(from: $0) }
     }
     
     private func loadExchangeRates() async -> [ExchangeRate] {

@@ -91,7 +91,7 @@ struct UserAccountTransferView: View {
             if viewModel.isLoading {
                 ProgressView()
             }
-        }.task { // load only once???
+        }.task {
             await viewModel.load()
         }
         .customAlert($viewModel.alertMessage)

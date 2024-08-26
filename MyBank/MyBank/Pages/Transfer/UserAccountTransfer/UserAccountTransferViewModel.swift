@@ -7,6 +7,7 @@
 
 import Foundation
 import MyFoundation
+import Resolver
 
 @MainActor
 final class UserAccountTransferViewModel: ObservableObject {
@@ -16,7 +17,13 @@ final class UserAccountTransferViewModel: ObservableObject {
         static let insufficientFundsText = "Insufficient funds!"
         static let exchangeRateNotFound = "Exchange rate not found"
         static let amountCantBeZero = "Amount can't be 0"
+        static let errorLoadingAccounts = "Error loading accounts"
     }
+    
+    @Injected
+    private var accountsService: AccountsNetworkService
+    
+    // MARK: - Internal properties
     
     @Published
     private(set) var accounts = [BankAccount]()
@@ -69,7 +76,7 @@ final class UserAccountTransferViewModel: ObservableObject {
         }
         guard let fromAccount,
               let selectedCurrency else {
-            // alert???
+            // alert
             return
         }
         guard let convertedSourceAmount = Self.convertedSourceAmount(fromAccount: fromAccount, selectedCurrency: selectedCurrency, exchangeRates: bankInfo.exchangeRates) else {
@@ -82,7 +89,6 @@ final class UserAccountTransferViewModel: ObservableObject {
             alertMessage = .error(Constants.insufficientFundsText)
             return
         }
-        // check faceid???
         alertMessage = .info(Constants.sendSuccessText)
         // pop to route
     }
@@ -105,14 +111,15 @@ final class UserAccountTransferViewModel: ObservableObject {
     }
     
     private func loadAccounts() async {
-        try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
-        accounts = [
-            BankAccount(id: 0, amount: 1023.7, currency: 0, name: "My dollar account"),
-            BankAccount(id: 1, amount: 937, currency: 1, name: "My euro account")
-        ]
-        fromAccount = accounts.first
-        if let toAccount = accounts[safe: 1] {
-            self.toAccount = toAccount
+        do {
+            let dtos = try await accountsService.load()
+            accounts = dtos.map { BankAccountMapper.model(from: $0) }
+            fromAccount = accounts.first
+            if let toAccount = accounts[safe: 1] {
+                self.toAccount = toAccount
+            }
+        } catch {
+            alertMessage = .error(Constants.errorLoadingAccounts)
         }
     }
     
