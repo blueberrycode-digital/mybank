@@ -18,6 +18,12 @@ struct MainView: View {
                     Image(systemName: "paperplane")
                     Text("Transfer")
                 }
+            
+            UserBankAccountsView(bankInfo: bankInfo)
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("My Accounts")
+                }
         }
     }
     

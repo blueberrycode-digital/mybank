@@ -44,6 +44,9 @@
 		03D199EB2C7D0635005EAB22 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D199EA2C7D0634005EAB22 /* Currency.swift */; };
 		03D199ED2C7D06BE005EAB22 /* BankAccountMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D199EC2C7D06BE005EAB22 /* BankAccountMapper.swift */; };
 		03D199F02C7D0E09005EAB22 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D199EF2C7D0E09005EAB22 /* NetworkServices.swift */; };
+		03DDE2442C91D2EF00FE7721 /* UserBankAccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE2432C91D2EF00FE7721 /* UserBankAccountsView.swift */; };
+		03DDE2462C91D34900FE7721 /* UserBankAccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE2452C91D34900FE7721 /* UserBankAccountsViewModel.swift */; };
+		03DDE2482C91D95300FE7721 /* SingleAccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE2472C91D95300FE7721 /* SingleAccountRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		03D199EA2C7D0634005EAB22 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		03D199EC2C7D06BE005EAB22 /* BankAccountMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountMapper.swift; sourceTree = "<group>"; };
 		03D199EF2C7D0E09005EAB22 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		03DDE2432C91D2EF00FE7721 /* UserBankAccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountsView.swift; sourceTree = "<group>"; };
+		03DDE2452C91D34900FE7721 /* UserBankAccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountsViewModel.swift; sourceTree = "<group>"; };
+		03DDE2472C91D95300FE7721 /* SingleAccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAccountRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +246,7 @@
 		033886622C0916AD00F1B526 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				03DDE2422C91D2D500FE7721 /* UserBankAccounts */,
 				03BE81FF2C0C30EC00AD253E /* Main */,
 				033886642C0916C600F1B526 /* Transfer */,
 				033886632C0916BC00F1B526 /* Login */,
@@ -354,6 +361,16 @@
 				03D199EF2C7D0E09005EAB22 /* NetworkServices.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		03DDE2422C91D2D500FE7721 /* UserBankAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				03DDE2432C91D2EF00FE7721 /* UserBankAccountsView.swift */,
+				03DDE2472C91D95300FE7721 /* SingleAccountRow.swift */,
+				03DDE2452C91D34900FE7721 /* UserBankAccountsViewModel.swift */,
+			);
+			path = UserBankAccounts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +519,7 @@
 				0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */,
 				03B240A42C0EAB8F009492C5 /* CurrencyDto.swift in Sources */,
 				03D199EB2C7D0635005EAB22 /* Currency.swift in Sources */,
+				03DDE2482C91D95300FE7721 /* SingleAccountRow.swift in Sources */,
 				0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */,
 				0325E52D2C0914EC0043463A /* MainView.swift in Sources */,
 				03D199ED2C7D06BE005EAB22 /* BankAccountMapper.swift in Sources */,
@@ -513,12 +531,14 @@
 				03D199E92C7D0622005EAB22 /* BankAccountDto.swift in Sources */,
 				03B240A12C0EAB6D009492C5 /* CurrencyMapper.swift in Sources */,
 				03B240AB2C0EAECB009492C5 /* NetworkService.swift in Sources */,
+				03DDE2442C91D2EF00FE7721 /* UserBankAccountsView.swift in Sources */,
 				0365E0B32C0D118F00E071F7 /* AppConstants.swift in Sources */,
 				03B240A92C0EAE83009492C5 /* Endpoints.swift in Sources */,
 				03B240AE2C0EB323009492C5 /* ResolverLoader.swift in Sources */,
 				031F0B0E2C0EA90E002AFB78 /* CurrencyNetworkService.swift in Sources */,
 				03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */,
 				0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */,
+				03DDE2462C91D34900FE7721 /* UserBankAccountsViewModel.swift in Sources */,
 				03BE82052C0C336000AD253E /* ExchangeRate.swift in Sources */,
 				03BE81FC2C0BC23000AD253E /* SwapButtonView.swift in Sources */,
 			);
