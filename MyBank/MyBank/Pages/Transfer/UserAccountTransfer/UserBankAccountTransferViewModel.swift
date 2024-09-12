@@ -1,5 +1,5 @@
 //
-//  UserAccountTransferViewModel.swift
+//  UserBankAccountTransferViewModel.swift
 //  MyBank
 //
 //  Created by DM (Personal) on 30/05/2024.
@@ -10,7 +10,7 @@ import MyFoundation
 import Resolver
 
 @MainActor
-final class UserAccountTransferViewModel: ObservableObject {
+final class UserBankAccountTransferViewModel: ObservableObject {
     
     private struct Constants {
         static let unableToLoadDataText = "Unable to load data"

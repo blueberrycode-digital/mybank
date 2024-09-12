@@ -13,6 +13,7 @@
 		03CAB7672C0915A8004629EC /* MyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CAB75C2C0915A8004629EC /* MyFoundation.framework */; };
 		03CAB76C2C0915A8004629EC /* MyFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAB76B2C0915A8004629EC /* MyFoundationTests.swift */; };
 		03CAB76D2C0915A8004629EC /* MyFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 03CAB75F2C0915A8004629EC /* MyFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03DDE24D2C925F5000FE7721 /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE24C2C925F5000FE7721 /* MyTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		03CAB7602C0915A8004629EC /* MyFoundation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MyFoundation.docc; sourceTree = "<group>"; };
 		03CAB7662C0915A8004629EC /* MyFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CAB76B2C0915A8004629EC /* MyFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoundationTests.swift; sourceTree = "<group>"; };
+		03DDE24C2C925F5000FE7721 /* MyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				03CAB75F2C0915A8004629EC /* MyFoundation.h */,
 				03CAB7602C0915A8004629EC /* MyFoundation.docc */,
 				033886782C09842800F1B526 /* AlertMessage.swift */,
+				03DDE24C2C925F5000FE7721 /* MyTimer.swift */,
 			);
 			path = MyFoundation;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				03CAB7612C0915A8004629EC /* MyFoundation.docc in Sources */,
 				033886792C09842800F1B526 /* AlertMessage.swift in Sources */,
 				033886712C0962FC00F1B526 /* Array+Extension.swift in Sources */,
+				03DDE24D2C925F5000FE7721 /* MyTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

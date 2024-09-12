@@ -1,5 +1,5 @@
 //
-//  UserAccountTransferViewModelTests.swift
+//  UserBankAccountTransferViewModelTests.swift
 //  MyBankTests
 //
 //  Created by DM (Personal) on 02/06/2024.
@@ -9,9 +9,9 @@
 import Resolver
 import XCTest
 
-final class UserAccountTransferViewModelTests: XCTestCase {
+final class UserBankAccountTransferViewModelTests: XCTestCase {
     
-    private var viewModel: UserAccountTransferViewModel!
+    private var viewModel: UserBankAccountTransferViewModel!
     
     override func setUp() async throws {
         try await super.setUp()
@@ -30,7 +30,7 @@ final class UserAccountTransferViewModelTests: XCTestCase {
         let exchangeRates = [ExchangeRate(fromId: 0, toId: 1, value: 10)]
         let bankInfo = BankInfo(currencies: currencies, exchangeRates: exchangeRates)
         
-        viewModel = await UserAccountTransferViewModel(bankInfo: bankInfo)
+        viewModel = await UserBankAccountTransferViewModel(bankInfo: bankInfo)
     }
     
     override func tearDown() {

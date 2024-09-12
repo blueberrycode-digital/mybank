@@ -5,7 +5,7 @@
 //  Created by DM (Personal) on 03/06/2024.
 //
 
-import Foundation
+import MyFoundation
 import Resolver
 
 extension Resolver: ResolverRegistering {
@@ -14,6 +14,7 @@ extension Resolver: ResolverRegistering {
         register { DefaultNetworkService() as NetworkService }
         register { DefaultCurrencyNetworkService() as CurrencyNetworkService }
         register { DefaultAccountsNetworkService() as AccountsNetworkService }
+        register { DefaultMyTimerCreator() as MyTimerCreator }
     }
     
 }

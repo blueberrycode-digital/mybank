@@ -17,15 +17,15 @@
 		033195E12C0A08740064799B /* MyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033195E02C0A08740064799B /* MyFoundation.framework */; };
 		033195E22C0A08740064799B /* MyFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 033195E02C0A08740064799B /* MyFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		033886682C09220900F1B526 /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886672C0916F000F1B526 /* TransferView.swift */; };
-		0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */; };
-		0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */; };
+		0338866B2C092B2A00F1B526 /* UserBankAccountTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866A2C092B2A00F1B526 /* UserBankAccountTransferView.swift */; };
+		0338866D2C095A3B00F1B526 /* UserBankAccountTransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338866C2C095A3B00F1B526 /* UserBankAccountTransferViewModel.swift */; };
 		033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886722C09806B00F1B526 /* TransferSectionView.swift */; };
 		033886772C09827700F1B526 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033886762C09827700F1B526 /* PrimaryButtonView.swift */; };
 		0338867C2C0984DA00F1B526 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338867B2C0984DA00F1B526 /* BankAccount.swift */; };
 		033CFB422C0A44BC008C4B66 /* TransferSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */; };
 		0365E0B12C0D10CF00E071F7 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B02C0D10CF00E071F7 /* AppTheme.swift */; };
 		0365E0B32C0D118F00E071F7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B22C0D118F00E071F7 /* AppConstants.swift */; };
-		0365E0B52C0D335400E071F7 /* UserAccountTransferViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B42C0D335400E071F7 /* UserAccountTransferViewModelTests.swift */; };
+		0365E0B52C0D335400E071F7 /* UserBankAccountTransferViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365E0B42C0D335400E071F7 /* UserBankAccountTransferViewModelTests.swift */; };
 		038E5A532C0D54C9005C26AA /* AlertMessage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038E5A522C0D54C9005C26AA /* AlertMessage+Extension.swift */; };
 		03B2409E2C0EAAD2009492C5 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 03B2409D2C0EAAD2009492C5 /* Resolver */; };
 		03B240A12C0EAB6D009492C5 /* CurrencyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B240A02C0EAB6D009492C5 /* CurrencyMapper.swift */; };
@@ -47,6 +47,8 @@
 		03DDE2442C91D2EF00FE7721 /* UserBankAccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE2432C91D2EF00FE7721 /* UserBankAccountsView.swift */; };
 		03DDE2462C91D34900FE7721 /* UserBankAccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE2452C91D34900FE7721 /* UserBankAccountsViewModel.swift */; };
 		03DDE2482C91D95300FE7721 /* SingleAccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE2472C91D95300FE7721 /* SingleAccountRow.swift */; };
+		03DDE24A2C9255CB00FE7721 /* UserBankAccountsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE2492C9255CB00FE7721 /* UserBankAccountsViewModelTests.swift */; };
+		03DDE24F2C92622900FE7721 /* MockMyTimerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDE24E2C92622900FE7721 /* MockMyTimerCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,15 +95,15 @@
 		0325E5452C0914ED0043463A /* MyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBankUITests.swift; sourceTree = "<group>"; };
 		033195E02C0A08740064799B /* MyFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MyFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		033886672C0916F000F1B526 /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
-		0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferView.swift; sourceTree = "<group>"; };
-		0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferViewModel.swift; sourceTree = "<group>"; };
+		0338866A2C092B2A00F1B526 /* UserBankAccountTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountTransferView.swift; sourceTree = "<group>"; };
+		0338866C2C095A3B00F1B526 /* UserBankAccountTransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountTransferViewModel.swift; sourceTree = "<group>"; };
 		033886722C09806B00F1B526 /* TransferSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSectionView.swift; sourceTree = "<group>"; };
 		033886762C09827700F1B526 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		0338867B2C0984DA00F1B526 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSectionHeaderView.swift; sourceTree = "<group>"; };
 		0365E0B02C0D10CF00E071F7 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		0365E0B22C0D118F00E071F7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		0365E0B42C0D335400E071F7 /* UserAccountTransferViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTransferViewModelTests.swift; sourceTree = "<group>"; };
+		0365E0B42C0D335400E071F7 /* UserBankAccountTransferViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountTransferViewModelTests.swift; sourceTree = "<group>"; };
 		038E5A522C0D54C9005C26AA /* AlertMessage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertMessage+Extension.swift"; sourceTree = "<group>"; };
 		03B240A02C0EAB6D009492C5 /* CurrencyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyMapper.swift; sourceTree = "<group>"; };
 		03B240A32C0EAB8F009492C5 /* CurrencyDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDto.swift; sourceTree = "<group>"; };
@@ -121,6 +123,8 @@
 		03DDE2432C91D2EF00FE7721 /* UserBankAccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountsView.swift; sourceTree = "<group>"; };
 		03DDE2452C91D34900FE7721 /* UserBankAccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountsViewModel.swift; sourceTree = "<group>"; };
 		03DDE2472C91D95300FE7721 /* SingleAccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAccountRow.swift; sourceTree = "<group>"; };
+		03DDE2492C9255CB00FE7721 /* UserBankAccountsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBankAccountsViewModelTests.swift; sourceTree = "<group>"; };
+		03DDE24E2C92622900FE7721 /* MockMyTimerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMyTimerCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +218,8 @@
 				03D199EE2C7D0DFE005EAB22 /* Mocks */,
 				038E5A512C0D54BE005C26AA /* Common */,
 				0325E53B2C0914ED0043463A /* CurrencyConverterTests.swift */,
-				0365E0B42C0D335400E071F7 /* UserAccountTransferViewModelTests.swift */,
+				03DDE2492C9255CB00FE7721 /* UserBankAccountsViewModelTests.swift */,
+				0365E0B42C0D335400E071F7 /* UserBankAccountTransferViewModelTests.swift */,
 			);
 			path = MyBankTests;
 			sourceTree = "<group>";
@@ -275,11 +280,11 @@
 		033886692C092B0C00F1B526 /* UserAccountTransfer */ = {
 			isa = PBXGroup;
 			children = (
-				0338866A2C092B2A00F1B526 /* UserAccountTransferView.swift */,
+				0338866A2C092B2A00F1B526 /* UserBankAccountTransferView.swift */,
 				03BE81FB2C0BC23000AD253E /* SwapButtonView.swift */,
 				033886722C09806B00F1B526 /* TransferSectionView.swift */,
 				033CFB412C0A44BC008C4B66 /* TransferSectionHeaderView.swift */,
-				0338866C2C095A3B00F1B526 /* UserAccountTransferViewModel.swift */,
+				0338866C2C095A3B00F1B526 /* UserBankAccountTransferViewModel.swift */,
 			);
 			path = UserAccountTransfer;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				03D199EF2C7D0E09005EAB22 /* NetworkServices.swift */,
+				03DDE24E2C92622900FE7721 /* MockMyTimerCreator.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -516,7 +522,7 @@
 				0365E0B12C0D10CF00E071F7 /* AppTheme.swift in Sources */,
 				033886732C09806B00F1B526 /* TransferSectionView.swift in Sources */,
 				033886682C09220900F1B526 /* TransferView.swift in Sources */,
-				0338866D2C095A3B00F1B526 /* UserAccountTransferViewModel.swift in Sources */,
+				0338866D2C095A3B00F1B526 /* UserBankAccountTransferViewModel.swift in Sources */,
 				03B240A42C0EAB8F009492C5 /* CurrencyDto.swift in Sources */,
 				03D199EB2C7D0635005EAB22 /* Currency.swift in Sources */,
 				03DDE2482C91D95300FE7721 /* SingleAccountRow.swift in Sources */,
@@ -537,7 +543,7 @@
 				03B240AE2C0EB323009492C5 /* ResolverLoader.swift in Sources */,
 				031F0B0E2C0EA90E002AFB78 /* CurrencyNetworkService.swift in Sources */,
 				03BE81FE2C0C2C4500AD253E /* CurrencyConverter.swift in Sources */,
-				0338866B2C092B2A00F1B526 /* UserAccountTransferView.swift in Sources */,
+				0338866B2C092B2A00F1B526 /* UserBankAccountTransferView.swift in Sources */,
 				03DDE2462C91D34900FE7721 /* UserBankAccountsViewModel.swift in Sources */,
 				03BE82052C0C336000AD253E /* ExchangeRate.swift in Sources */,
 				03BE81FC2C0BC23000AD253E /* SwapButtonView.swift in Sources */,
@@ -548,7 +554,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0365E0B52C0D335400E071F7 /* UserAccountTransferViewModelTests.swift in Sources */,
+				03DDE24F2C92622900FE7721 /* MockMyTimerCreator.swift in Sources */,
+				03DDE24A2C9255CB00FE7721 /* UserBankAccountsViewModelTests.swift in Sources */,
+				0365E0B52C0D335400E071F7 /* UserBankAccountTransferViewModelTests.swift in Sources */,
 				0325E53C2C0914ED0043463A /* CurrencyConverterTests.swift in Sources */,
 				03D199F02C7D0E09005EAB22 /* NetworkServices.swift in Sources */,
 				038E5A532C0D54C9005C26AA /* AlertMessage+Extension.swift in Sources */,

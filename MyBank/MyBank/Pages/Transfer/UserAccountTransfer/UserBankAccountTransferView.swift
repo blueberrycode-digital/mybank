@@ -1,5 +1,5 @@
 //
-//  UserAccountTransferView.swift
+//  UserBankAccountTransferView.swift
 //  MyBank
 //
 //  Created by DM (Personal) on 30/05/2024.
@@ -9,7 +9,7 @@ import Foundation
 import MyFoundation
 import SwiftUI
 
-struct UserAccountTransferView: View {
+struct UserBankAccountTransferView: View {
     
     private struct Constants {
         static let amountSpacing: CGFloat = 12
@@ -18,7 +18,7 @@ struct UserAccountTransferView: View {
     }
     
     @ObservedObject
-    private var viewModel: UserAccountTransferViewModel
+    private var viewModel: UserBankAccountTransferViewModel
     
     // MARK: - Private views
     
@@ -100,7 +100,7 @@ struct UserAccountTransferView: View {
     // MARK: - Init
     
     init(bankInfo: BankInfo) {
-        self.viewModel = UserAccountTransferViewModel(bankInfo: bankInfo)
+        self.viewModel = UserBankAccountTransferViewModel(bankInfo: bankInfo)
     }
     
 }

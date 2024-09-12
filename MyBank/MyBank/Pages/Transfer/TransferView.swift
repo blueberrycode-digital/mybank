@@ -18,7 +18,7 @@ struct TransferView: View {
     
     var body: some View {
         VStack(spacing: Constants.spacing) {
-            NavigationLink(destination: UserAccountTransferView(bankInfo: bankInfo)) {
+            NavigationLink(destination: UserBankAccountTransferView(bankInfo: bankInfo)) {
                 TransferViewListItem(text: "Between your own accounts")
             }
             
